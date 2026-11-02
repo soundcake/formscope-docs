@@ -39,8 +39,8 @@ footer .bar{flex-wrap:wrap}
 <p>Each time a report runs, FormScope asks Jira, as the viewer, which indexed requests they can browse. Project permissions, issue security levels and the latest permission changes all apply. Totals, chart labels, filter choices and exports are built from exactly those requests.</p>
 <h2>Form view restrictions</h2>
 <p>Native forms can restrict who views a form, separately from who views the request. FormScope respects every restriction.</p>
-<ul><li>FormScope reads forms with its own app identity, so forms with view restrictions stay private and out of the index.</li>
-<li>To report on a restricted form, add FormScope to the form's restriction list. FormScope then confirms each viewer's access with Jira before showing that form's answers. This check is on by default and always on wherever restricted forms are detected.</li>
+<ul><li>Forms with view restrictions stay private: FormScope keeps them out of every report, for every viewer.</li>
+<li>As an extra safeguard, FormScope confirms each viewer's access to every form with Jira before showing its answers. This check is on by default and always on wherever restricted forms are detected.</li>
 <li>Access results are reused for each viewer for up to two hours, so repeat views stay fast.</li></ul>
 <h2>App access and admin controls</h2>
 <ul><li>Jira admins choose forms, questions and mappings. Reports apply each viewer's own Jira permissions, admins included.</li>
