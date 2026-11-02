@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Permissions - FormScope documentation</title>
+<meta name="description" content="How FormScope enforces Jira and form permissions.">
+<style>
+:root{--text:#172b4d;--subtle:#44546f;--muted:#626f86;--bg:#fff;--sunken:#f7f8f9;--border:#091e4224;--brand:#0c66e4;--brand-strong:#0055cc;--info:#e9f2ff}
+@media (prefers-color-scheme: dark){:root{--text:#dee4ea;--subtle:#b6c2cf;--muted:#9fadbc;--bg:#1d2125;--sunken:#161a1d;--border:#a6c5e229;--brand:#579dff;--brand-strong:#85b8ff;--info:#1c2b41}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Ubuntu,"Helvetica Neue",sans-serif}
+a{color:var(--brand)}a:hover{color:var(--brand-strong)}
+header{border-bottom:1px solid var(--border);background:var(--bg)}
+.bar{max-width:1120px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--text);font-size:18px}
+.logo svg{width:28px;height:28px}
+.by{color:var(--muted);font-size:14px;margin-left:auto}
+.wrap{max-width:1120px;margin:0 auto;padding:24px 16px 64px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px}
+nav ul{list-style:none;margin:0;padding:0;position:sticky;top:16px}
+nav li a{display:block;padding:6px 10px;border-radius:6px;text-decoration:none;color:var(--subtle);font-size:15px}
+nav li a[aria-current=page]{background:var(--info);color:var(--brand);font-weight:600}
+nav li a:hover{background:var(--sunken)}
+main{min-width:0;max-width:760px}
+h1{font-size:32px;line-height:1.2;margin:0 0 8px}h2{font-size:22px;margin:32px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{font-size:18px;color:var(--subtle)}
+.note{background:var(--info);border-radius:8px;padding:12px 16px;margin:16px 0}
+.meta{color:var(--muted);font-size:14px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--sunken)}
+code{background:var(--sunken);padding:1px 5px;border-radius:4px;font-size:14px}
+footer{border-top:1px solid var(--border);color:var(--muted);font-size:14px}
+footer .bar{flex-wrap:wrap}
+@media (max-width:820px){.wrap{grid-template-columns:1fr;gap:16px}nav ul{position:static;display:flex;flex-wrap:wrap;gap:4px}nav li a{padding:4px 8px;font-size:14px}}
+</style></head>
+<body>
+<header><div class="bar"><a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0c66e4"/><rect x="14" y="34" width="8" height="16" rx="2" fill="#fff"/><rect x="28" y="24" width="8" height="26" rx="2" fill="#fff"/><rect x="42" y="14" width="8" height="36" rx="2" fill="#fff"/></svg><span>FormScope</span></a><span class="by">Forms Reports &amp; Analytics for Jira, by LimeVibe Limited</span></div></header>
+<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and coverage</a></li><li><a href="permissions.html" aria-current=page>Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
+<main id="main">
+<h1>Permissions</h1>
+<p class="lead">Every table, chart, gadget, drill-down and export shows only data the viewer is allowed to see.</p>
+<h2>Request access</h2>
+<p>Each time a report runs, FormScope asks Jira, as the viewer, which of the indexed requests they can browse. Project permissions, issue security levels and recent permission changes all apply. Totals, chart labels, filter choices and exports are computed only from those requests.</p>
+<h2>Form view restrictions</h2>
+<p>Native forms can restrict who can view a form, separately from who can view the request.</p>
+<ul><li>FormScope reads forms with its own app identity. Jira refuses FormScope access to forms with view restrictions, so their answers are not indexed at all. FormScope marks the data source as having restricted forms.</li>
+<li>By default, FormScope also checks each viewer's access to each form with Jira before using its answers. If you add FormScope to a form's restriction list, this check keeps those answers limited to people allowed to open the form. The check is always on for data sources where restricted forms were detected.</li>
+<li>Access checks are cached for each viewer for up to two hours. Removing someone from a group used in a form restriction can therefore take up to two hours to reflect in FormScope.</li></ul>
+<h2>App access and admin powers</h2>
+<ul><li>Jira admins choose forms, questions and mappings. They don't get extra data access in reports: reports always apply the viewer's own Jira permissions.</li>
+<li>Admins can limit who can use FormScope to chosen groups.</li>
+<li>Report names and settings are visible only to people who can see the report. Admins see only how many reports each person owns.</li></ul>
+<h2>What FormScope never does</h2>
+<ul><li>It never copies answers into Jira fields or issue properties.</li>
+<li>It never sends form data outside Atlassian's platform.</li>
+<li>It never trusts user identity or permissions sent from the browser; it uses Atlassian's signed context.</li></ul>
+</main></div>
+<footer><div class="bar"><span>&copy; 2026 LimeVibe Limited. Registered in England and Wales, company number 06872411.</span>
+<span style="margin-left:auto"><a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span></div></footer>
+</body></html>

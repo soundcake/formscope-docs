@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data retention and deletion - FormScope documentation</title>
+<meta name="description" content="How long FormScope keeps data and how to delete it.">
+<style>
+:root{--text:#172b4d;--subtle:#44546f;--muted:#626f86;--bg:#fff;--sunken:#f7f8f9;--border:#091e4224;--brand:#0c66e4;--brand-strong:#0055cc;--info:#e9f2ff}
+@media (prefers-color-scheme: dark){:root{--text:#dee4ea;--subtle:#b6c2cf;--muted:#9fadbc;--bg:#1d2125;--sunken:#161a1d;--border:#a6c5e229;--brand:#579dff;--brand-strong:#85b8ff;--info:#1c2b41}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Ubuntu,"Helvetica Neue",sans-serif}
+a{color:var(--brand)}a:hover{color:var(--brand-strong)}
+header{border-bottom:1px solid var(--border);background:var(--bg)}
+.bar{max-width:1120px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--text);font-size:18px}
+.logo svg{width:28px;height:28px}
+.by{color:var(--muted);font-size:14px;margin-left:auto}
+.wrap{max-width:1120px;margin:0 auto;padding:24px 16px 64px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px}
+nav ul{list-style:none;margin:0;padding:0;position:sticky;top:16px}
+nav li a{display:block;padding:6px 10px;border-radius:6px;text-decoration:none;color:var(--subtle);font-size:15px}
+nav li a[aria-current=page]{background:var(--info);color:var(--brand);font-weight:600}
+nav li a:hover{background:var(--sunken)}
+main{min-width:0;max-width:760px}
+h1{font-size:32px;line-height:1.2;margin:0 0 8px}h2{font-size:22px;margin:32px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{font-size:18px;color:var(--subtle)}
+.note{background:var(--info);border-radius:8px;padding:12px 16px;margin:16px 0}
+.meta{color:var(--muted);font-size:14px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--sunken)}
+code{background:var(--sunken);padding:1px 5px;border-radius:4px;font-size:14px}
+footer{border-top:1px solid var(--border);color:var(--muted);font-size:14px}
+footer .bar{flex-wrap:wrap}
+@media (max-width:820px){.wrap{grid-template-columns:1fr;gap:16px}nav ul{position:static;display:flex;flex-wrap:wrap;gap:4px}nav li a{padding:4px 8px;font-size:14px}}
+</style></head>
+<body>
+<header><div class="bar"><a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0c66e4"/><rect x="14" y="34" width="8" height="16" rx="2" fill="#fff"/><rect x="28" y="24" width="8" height="26" rx="2" fill="#fff"/><rect x="42" y="14" width="8" height="36" rx="2" fill="#fff"/></svg><span>FormScope</span></a><span class="by">Forms Reports &amp; Analytics for Jira, by LimeVibe Limited</span></div></header>
+<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and coverage</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html" aria-current=page>Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
+<main id="main">
+<h1>Data retention and deletion</h1>
+<table><tr><th>Data</th><th>Kept until</th></tr>
+<tr><td>Indexed answers and request details</td><td>The form, request, question selection or data source is removed, the next reconciliation finds the form or request deleted, a Jira admin clears the data, or the app is uninstalled.</td></tr>
+<tr><td>Answers to questions removed from a data source</td><td>Deleted when the admin saves the new question selection.</td></tr>
+<tr><td>Per-viewer access checks</td><td>Up to two hours, then deleted by the next scheduled cleanup.</td></tr>
+<tr><td>Saved reports, mappings, settings</td><td>Deleted by their owner or a Jira admin, or when the app is uninstalled.</td></tr></table>
+<h2>Deleting data yourself</h2>
+<ul><li><strong>One form:</strong> Settings &gt; Data management &gt; Clear, or remove the data source.</li>
+<li><strong>Everything:</strong> Settings &gt; Data management &gt; Clear all FormScope data.</li>
+<li><strong>Reports of someone who has left:</strong> Settings &gt; Saved reports by owner.</li></ul>
+<p>Clearing removes the data from FormScope's storage straight away. Atlassian's platform may keep backups for a limited period under its own policies, and we cannot delete those directly.</p>
+<h2>Uninstalling</h2><p>Atlassian keeps Forge-hosted app data for 28 days after an app is uninstalled, then deletes it. Reinstalling within that time does not automatically restore it. To remove data sooner, clear it in FormScope before uninstalling.</p>
+</main></div>
+<footer><div class="bar"><span>&copy; 2026 LimeVibe Limited. Registered in England and Wales, company number 06872411.</span>
+<span style="margin-left:auto"><a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span></div></footer>
+</body></html>

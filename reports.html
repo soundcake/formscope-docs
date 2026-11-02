@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports and mappings - FormScope documentation</title>
+<meta name="description" content="Build tables, charts and completeness reports, and map questions across forms.">
+<style>
+:root{--text:#172b4d;--subtle:#44546f;--muted:#626f86;--bg:#fff;--sunken:#f7f8f9;--border:#091e4224;--brand:#0c66e4;--brand-strong:#0055cc;--info:#e9f2ff}
+@media (prefers-color-scheme: dark){:root{--text:#dee4ea;--subtle:#b6c2cf;--muted:#9fadbc;--bg:#1d2125;--sunken:#161a1d;--border:#a6c5e229;--brand:#579dff;--brand-strong:#85b8ff;--info:#1c2b41}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Ubuntu,"Helvetica Neue",sans-serif}
+a{color:var(--brand)}a:hover{color:var(--brand-strong)}
+header{border-bottom:1px solid var(--border);background:var(--bg)}
+.bar{max-width:1120px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--text);font-size:18px}
+.logo svg{width:28px;height:28px}
+.by{color:var(--muted);font-size:14px;margin-left:auto}
+.wrap{max-width:1120px;margin:0 auto;padding:24px 16px 64px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px}
+nav ul{list-style:none;margin:0;padding:0;position:sticky;top:16px}
+nav li a{display:block;padding:6px 10px;border-radius:6px;text-decoration:none;color:var(--subtle);font-size:15px}
+nav li a[aria-current=page]{background:var(--info);color:var(--brand);font-weight:600}
+nav li a:hover{background:var(--sunken)}
+main{min-width:0;max-width:760px}
+h1{font-size:32px;line-height:1.2;margin:0 0 8px}h2{font-size:22px;margin:32px 0 8px}h3{font-size:18px;margin:24px 0 6px}
+.lead{font-size:18px;color:var(--subtle)}
+.note{background:var(--info);border-radius:8px;padding:12px 16px;margin:16px 0}
+.meta{color:var(--muted);font-size:14px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--sunken)}
+code{background:var(--sunken);padding:1px 5px;border-radius:4px;font-size:14px}
+footer{border-top:1px solid var(--border);color:var(--muted);font-size:14px}
+footer .bar{flex-wrap:wrap}
+@media (max-width:820px){.wrap{grid-template-columns:1fr;gap:16px}nav ul{position:static;display:flex;flex-wrap:wrap;gap:4px}nav li a{padding:4px 8px;font-size:14px}}
+</style></head>
+<body>
+<header><div class="bar"><a class="logo" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0c66e4"/><rect x="14" y="34" width="8" height="16" rx="2" fill="#fff"/><rect x="28" y="24" width="8" height="26" rx="2" fill="#fff"/><rect x="42" y="14" width="8" height="36" rx="2" fill="#fff"/></svg><span>FormScope</span></a><span class="by">Forms Reports &amp; Analytics for Jira, by LimeVibe Limited</span></div></header>
+<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html" aria-current=page>Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and coverage</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
+<main id="main">
+<h1>Reports and mappings</h1>
+<h2>Report types</h2>
+<table><tr><th>Type</th><th>Use it to</th></tr>
+<tr><td>Chart</td><td>Group by up to two fields and count requests or form submissions, or total, average, minimum or maximum a number question. Show it as bars, a line over time, or a table.</td></tr>
+<tr><td>Table</td><td>List one row per form, with answers and Jira fields. Search, sort and page through results.</td></tr>
+<tr><td>Completeness</td><td>Find submitted forms that are missing answers to the questions you choose.</td></tr></table>
+<h2>Templates</h2>
+<p>Templates help you start: <em>Requests by department and status</em>, <em>Equipment quantities by month</em> and <em>Escalation information completeness</em>. FormScope never assumes what your questions mean. Every template asks you to pick and confirm the questions or mappings to use.</p>
+<h2>Choosing requests</h2>
+<ul><li><strong>Forms.</strong> One or more data sources.</li>
+<li><strong>Form status.</strong> Submitted, locked and open (draft) forms. Charts include submitted and locked forms by default.</li>
+<li><strong>JQL (optional).</strong> Narrows the requests, for example <code>created &gt;= -90d AND status != Done</code>. Jira evaluates it with each viewer's permissions. JQL selects requests; FormScope's own filters then filter the form answers. Form answers are not searchable with Jira's native JQL.</li>
+<li><strong>Filters.</strong> Filter on answers, number and date ranges, Jira fields and form fields.</li></ul>
+<h2>Counting rules</h2>
+<ul>
+<li><strong>Requests</strong> counts each request once, even if it has several forms or several answers.</li>
+<li><strong>Form submissions</strong> counts each form, so a request with two forms counts twice.</li>
+<li>When you group by a question that allows several answers, a request can appear in several groups. Totals still count it once, and the report says so.</li>
+<li>Totals and averages use exact decimal arithmetic. Answers that can't be read as numbers are excluded and the report shows how many.</li>
+<li>Numbers in different units are never added together through a mapping.</li>
+</ul>
+<h2>Dates</h2>
+<p>Group by day, ISO week, month, quarter or year. Each chart says which date it uses:</p>
+<ul><li><strong>Date answers</strong> are calendar dates and are not shifted between time zones.</li>
+<li><strong>Created</strong> and <strong>Updated</strong> are the request's Jira dates, grouped in the report's time zone.</li>
+<li><strong>Form last updated</strong> is when the form was last saved. Native forms do not record a separate submission date, so FormScope doesn't invent one.</li></ul>
+<h2>Drill down</h2>
+<p>Select any bar, point or table row to list the requests behind it, then open a request in Jira or export the list.</p>
+<h2>Question mappings</h2>
+<p>A mapping combines equivalent questions from different forms into one reporting field. For example, map "Department" in an equipment form, "Business unit" in an access form and "Cost centre" in an order form to a mapping called <em>Department</em>. Then group or filter every form by it in one report.</p>
+<ul><li>Only Jira admins create mappings, deliberately. FormScope never guesses that questions are equivalent from their labels.</li>
+<li>A mapping takes at most one question from each form and only compatible answer types.</li>
+<li>Number mappings need a single unit; questions with different units (for example USD and GBP) can't be combined.</li>
+<li>Answers keep their original values; only the question is combined.</li></ul>
+<h2>Form versions</h2>
+<p>Each form on a request keeps its own copy of the form's design. FormScope reads answers with that copy, so renamed questions, changed choices and questions removed from newer versions keep their original meaning. Questions FormScope tracks by their stable internal identifier, not by label.</p>
+<h2>Completeness</h2>
+<p>For each selected question and submitted form, FormScope reports one of: <em>answered</em>, <em>not answered</em>, <em>hidden by form conditions</em> (not counted as missing), <em>not in that form version</em>, or <em>can't be assessed</em> (when FormScope can't reliably tell whether the question applied). Open forms are not assessed.</p>
+<h2>Saving and sharing</h2>
+<p>Save a report as <em>Only me</em> or <em>Everyone who uses FormScope</em>. Report names and settings are visible only to the people who can see the report. The owner can edit; Jira admins can also edit and delete shared reports. Sharing a report never shares data: each person sees only what they can access in Jira.</p>
+<h2>CSV export</h2>
+<p>Export any table, drill-down or report to CSV (UTF-8 with a byte order mark for spreadsheet compatibility). Exports apply the same permissions and filters as the report, include all matching rows up to 25,000, and never silently cut rows off; larger exports ask you to narrow the report. Text that a spreadsheet could treat as a formula is prefixed so it stays plain text.</p>
+</main></div>
+<footer><div class="bar"><span>&copy; 2026 LimeVibe Limited. Registered in England and Wales, company number 06872411.</span>
+<span style="margin-left:auto"><a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span></div></footer>
+</body></html>
