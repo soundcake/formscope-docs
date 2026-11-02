@@ -1,10 +1,9 @@
 # FormScope documentation
 
-Public documentation, support information, privacy policy and issue tracker for
-**FormScope - Forms Reports & Analytics for Jira**, an Atlassian Marketplace app by LimeVibe Limited.
+Search and report on native Jira Service Management form answers. Build dashboards without a custom field per question.
+
+Documentation, support and issue tracker for **FormScope - Forms Reports & Analytics for Jira** by LimeVibe Limited, on the Atlassian Marketplace.
 
 - Documentation: https://soundcake.github.io/formscope-docs/
 - Report a bug or request a feature: [open an issue](https://github.com/soundcake/formscope-docs/issues)
 - Email: contact@limevibelimited.com
-
-Please never post form answers, personal data or credentials in issues.

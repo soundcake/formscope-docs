@@ -31,50 +31,50 @@ footer .bar{flex-wrap:wrap}
 </style></head>
 <body>
 <header><div class="bar"><a class="logo" href="index.html"><svg viewBox="0 0 144 144" aria-hidden="true">  <defs>    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">      <stop offset="0" stop-color="#0E8A7E"/>      <stop offset="1" stop-color="#1B3F8F"/>    </linearGradient>  </defs>  <rect width="144" height="144" rx="32" fill="url(#bg)"/>    <rect x="26" y="22" width="62" height="80" rx="9" fill="#FFFFFF"/>  <rect x="36" y="36" width="34" height="7" rx="3.5" fill="#1B3F8F" opacity="0.85"/>  <rect x="36" y="51" width="42" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>  <rect x="36" y="66" width="26" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>    <line x1="106" y1="106" x2="124" y2="124" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>  <circle cx="88" cy="88" r="30" fill="#0F2E6B" stroke="#FFFFFF" stroke-width="8"/>  <rect x="73" y="90" width="8" height="12" rx="2" fill="#FFC145"/>  <rect x="85" y="80" width="8" height="22" rx="2" fill="#FFC145"/>  <rect x="97" y="72" width="8" height="30" rx="2" fill="#FFC145" opacity="0.0"/></svg><span>FormScope</span></a><span class="by">Forms Reports &amp; Analytics for Jira, by LimeVibe Limited</span></div></header>
-<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html" aria-current=page>Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and coverage</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
+<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html" aria-current=page>Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and scale</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Tips and answers</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
 <main id="main">
 <h1>Reports and mappings</h1>
 <h2>Report types</h2>
 <table><tr><th>Type</th><th>Use it to</th></tr>
 <tr><td>Chart</td><td>Group by up to two fields and count requests or form submissions, or total, average, minimum or maximum a number question. Show it as bars, a line over time, or a table.</td></tr>
-<tr><td>Table</td><td>List one row per form, with answers and Jira fields. Search, sort and page through results.</td></tr>
-<tr><td>Completeness</td><td>Find submitted forms that are missing answers to the questions you choose.</td></tr></table>
+<tr><td>Table</td><td>List one row per form, with answers and Jira fields side by side. Search, sort and page through results.</td></tr>
+<tr><td>Completeness</td><td>Spot submitted forms that are missing answers to the questions you choose.</td></tr></table>
 <h2>Templates</h2>
-<p>Templates help you start: <em>Requests by department and status</em>, <em>Equipment quantities by month</em> and <em>Escalation information completeness</em>. FormScope never assumes what your questions mean. Every template asks you to pick and confirm the questions or mappings to use.</p>
+<p>Start in seconds with <em>Requests by department and status</em>, <em>Equipment quantities by month</em> or <em>Escalation information completeness</em>. Each template walks you through picking the questions or mappings to use, so the report fits your forms exactly.</p>
 <h2>Choosing requests</h2>
 <ul><li><strong>Forms.</strong> One or more data sources.</li>
-<li><strong>Form status.</strong> Submitted, locked and open (draft) forms. Charts include submitted and locked forms by default.</li>
-<li><strong>JQL (optional).</strong> Narrows the requests, for example <code>created &gt;= -90d AND status != Done</code>. Jira evaluates it with each viewer's permissions. JQL selects requests; FormScope's own filters then filter the form answers. Form answers are not searchable with Jira's native JQL.</li>
+<li><strong>Form status.</strong> Submitted, locked and open (draft) forms. Charts use submitted and locked forms by default.</li>
+<li><strong>JQL (optional).</strong> Focus on the requests you care about, for example <code>created &gt;= -90d AND status != Done</code>. Jira evaluates it with each viewer's permissions, then FormScope's own filters slice the form answers.</li>
 <li><strong>Filters.</strong> Filter on answers, number and date ranges, Jira fields and form fields.</li></ul>
 <h2>Counting rules</h2>
 <ul>
-<li><strong>Requests</strong> counts each request once, even if it has several forms or several answers.</li>
+<li><strong>Requests</strong> counts each request once, even when it has several forms or several answers.</li>
 <li><strong>Form submissions</strong> counts each form, so a request with two forms counts twice.</li>
-<li>When you group by a question that allows several answers, a request can appear in several groups. Totals still count it once, and the report says so.</li>
-<li>Totals and averages use exact decimal arithmetic. Answers that can't be read as numbers are excluded and the report shows how many.</li>
-<li>Numbers in different units are never added together through a mapping.</li>
+<li>When you group by a question that allows several answers, a request appears in each matching group, and totals still count it once.</li>
+<li>Totals and averages use exact decimal arithmetic, and the report tells you how many entries weren't valid numbers.</li>
+<li>Unit-safe totals: mappings keep units consistent, so USD and GBP answers never mix.</li>
 </ul>
 <h2>Dates</h2>
-<p>Group by day, ISO week, month, quarter or year. Each chart says which date it uses:</p>
-<ul><li><strong>Date answers</strong> are calendar dates and are not shifted between time zones.</li>
+<p>Group by day, ISO week, month, quarter or year. Each chart names the date it uses:</p>
+<ul><li><strong>Date answers</strong> are calendar dates, exactly as entered.</li>
 <li><strong>Created</strong> and <strong>Updated</strong> are the request's Jira dates, grouped in the report's time zone.</li>
-<li><strong>Form last updated</strong> is when the form was last saved. Native forms do not record a separate submission date, so FormScope doesn't invent one.</li></ul>
+<li><strong>Form last updated</strong> is when the form was last saved.</li></ul>
 <h2>Drill down</h2>
 <p>Select any bar, point or table row to list the requests behind it, then open a request in Jira or export the list.</p>
 <h2>Question mappings</h2>
-<p>A mapping combines equivalent questions from different forms into one reporting field. For example, map "Department" in an equipment form, "Business unit" in an access form and "Cost centre" in an order form to a mapping called <em>Department</em>. Then group or filter every form by it in one report.</p>
-<ul><li>Only Jira admins create mappings, deliberately. FormScope never guesses that questions are equivalent from their labels.</li>
-<li>A mapping takes at most one question from each form and only compatible answer types.</li>
-<li>Number mappings need a single unit; questions with different units (for example USD and GBP) can't be combined.</li>
-<li>Answers keep their original values; only the question is combined.</li></ul>
+<p>A mapping combines matching questions from different forms into one reporting field. Map "Department" in an equipment form, "Business unit" in an access form and "Cost centre" in an order form to a mapping called <em>Department</em>, then group or filter every form by it in one report.</p>
+<ul><li>Jira admins create mappings, so every combined field means exactly what your team expects.</li>
+<li>Each mapping takes one question per form and checks the answer types match.</li>
+<li>Number mappings share one unit, so every total adds up.</li>
+<li>Answers keep their original values.</li></ul>
 <h2>Form versions</h2>
-<p>Each form on a request keeps its own copy of the form's design. FormScope reads answers with that copy, so renamed questions, changed choices and questions removed from newer versions keep their original meaning. Questions FormScope tracks by their stable internal identifier, not by label.</p>
+<p>Each form on a request keeps its own copy of the form's design, and FormScope reads every answer with that copy. Renamed questions, changed choices and questions removed from newer versions keep their original meaning, because FormScope tracks questions by their stable internal identifier.</p>
 <h2>Completeness</h2>
-<p>For each selected question and submitted form, FormScope reports one of: <em>answered</em>, <em>not answered</em>, <em>hidden by form conditions</em> (not counted as missing), <em>not in that form version</em>, or <em>can't be assessed</em> (when FormScope can't reliably tell whether the question applied). Open forms are not assessed.</p>
+<p>For each selected question and submitted form, FormScope reports <em>answered</em>, <em>not answered</em>, <em>hidden by form conditions</em> (never counted as missing), <em>not in that form version</em>, or <em>not assessable</em>. Missing-information counts only include questions that genuinely applied.</p>
 <h2>Saving and sharing</h2>
-<p>Save a report as <em>Only me</em> or <em>Everyone who uses FormScope</em>. Report names and settings are visible only to the people who can see the report. The owner can edit; Jira admins can also edit and delete shared reports. Sharing a report never shares data: each person sees only what they can access in Jira.</p>
+<p>Save a report as <em>Only me</em> or <em>Everyone who uses FormScope</em>. The owner edits the report, and Jira admins can edit and delete shared reports too. Everyone gets the same report, built from the requests they can open in Jira.</p>
 <h2>CSV export</h2>
-<p>Export any table, drill-down or report to CSV (UTF-8 with a byte order mark for spreadsheet compatibility). Exports apply the same permissions and filters as the report, include all matching rows up to 25,000, and never silently cut rows off; larger exports ask you to narrow the report. Text that a spreadsheet could treat as a formula is prefixed so it stays plain text.</p>
+<p>Export any table, drill-down or report to CSV, ready for Excel, Google Sheets and Numbers. Exports carry every matching row, up to 25,000 per file, with the same permissions and filters as the report. Formula-like text is neutralised so files open safely in any spreadsheet.</p>
 </main></div>
 <footer><div class="bar"><span>&copy; 2026 LimeVibe Limited. Registered in England and Wales, company number 06872411.</span>
 <span style="margin-left:auto"><a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span></div></footer>

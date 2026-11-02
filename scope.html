@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Supported forms - FormScope documentation</title>
-<meta name="description" content="Which forms and question types FormScope supports.">
+<meta name="description" content="The forms and question types FormScope reports on.">
 <style>
 :root{--text:#172b4d;--subtle:#44546f;--muted:#626f86;--bg:#fff;--sunken:#f7f8f9;--border:#091e4224;--brand:#0c66e4;--brand-strong:#0055cc;--info:#e9f2ff}
 @media (prefers-color-scheme: dark){:root{--text:#dee4ea;--subtle:#b6c2cf;--muted:#9fadbc;--bg:#1d2125;--sunken:#161a1d;--border:#a6c5e229;--brand:#579dff;--brand-strong:#85b8ff;--info:#1c2b41}}
@@ -31,17 +31,16 @@ footer .bar{flex-wrap:wrap}
 </style></head>
 <body>
 <header><div class="bar"><a class="logo" href="index.html"><svg viewBox="0 0 144 144" aria-hidden="true">  <defs>    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">      <stop offset="0" stop-color="#0E8A7E"/>      <stop offset="1" stop-color="#1B3F8F"/>    </linearGradient>  </defs>  <rect width="144" height="144" rx="32" fill="url(#bg)"/>    <rect x="26" y="22" width="62" height="80" rx="9" fill="#FFFFFF"/>  <rect x="36" y="36" width="34" height="7" rx="3.5" fill="#1B3F8F" opacity="0.85"/>  <rect x="36" y="51" width="42" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>  <rect x="36" y="66" width="26" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>    <line x1="106" y1="106" x2="124" y2="124" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>  <circle cx="88" cy="88" r="30" fill="#0F2E6B" stroke="#FFFFFF" stroke-width="8"/>  <rect x="73" y="90" width="8" height="12" rx="2" fill="#FFC145"/>  <rect x="85" y="80" width="8" height="22" rx="2" fill="#FFC145"/>  <rect x="97" y="72" width="8" height="30" rx="2" fill="#FFC145" opacity="0.0"/></svg><span>FormScope</span></a><span class="by">Forms Reports &amp; Analytics for Jira, by LimeVibe Limited</span></div></header>
-<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and coverage</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html" aria-current=page>Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
+<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and scale</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html" aria-current=page>Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Tips and answers</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
 <main id="main">
 <h1>Supported forms</h1>
 <ul>
-<li><strong>Product:</strong> Jira Service Management Cloud. Not Data Center.</li>
-<li><strong>Forms:</strong> native forms (formerly ProForma) attached to requests in service projects, read through the official Forms REST API. Forms created on request types or added to requests by agents are both supported.</li>
+<li><strong>Product:</strong> Jira Service Management Cloud.</li>
+<li><strong>Forms:</strong> native forms (formerly ProForma) on requests in service projects, whether added through a request type or by an agent, read through the official Forms REST API.</li>
 <li><strong>Projects:</strong> company-managed and team-managed service projects.</li>
-<li><strong>Question types:</strong> short and long text, paragraph, email and URL text, number, date, date and time, time, single choice (radio and dropdown), multiple choice (checkboxes and multi-select), single and multiple users, and attachments (counted, file names are not stored).</li>
-<li><strong>Conditional sections:</strong> show and hide conditions, including the newer field checks. When a condition can't be evaluated reliably, FormScope reports "can't be assessed" instead of guessing.</li>
-<li><strong>Not supported:</strong> Assets object questions (shown as answered or not answered only), choices from external data connections (shown with their identifier when no label is available), forms outside Jira Service Management, and native JQL search on form answers.</li>
-<li><strong>Restricted forms:</strong> see <a href="permissions.html">Permissions</a>.</li>
+<li><strong>Question types:</strong> short and long text, paragraph, email and URL, number, date, date and time, time, single choice (radio and dropdown), multiple choice (checkboxes and multi-select), single and multiple users, and attachments (as a file count).</li>
+<li><strong>Conditional sections:</strong> show and hide conditions, including the newer field checks, are evaluated for every form.</li>
+<li><strong>Restricted forms:</strong> fully respected. See <a href="permissions.html">Permissions</a>.</li>
 </ul>
 </main></div>
 <footer><div class="bar"><span>&copy; 2026 LimeVibe Limited. Registered in England and Wales, company number 06872411.</span>

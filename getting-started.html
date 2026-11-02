@@ -31,29 +31,28 @@ footer .bar{flex-wrap:wrap}
 </style></head>
 <body>
 <header><div class="bar"><a class="logo" href="index.html"><svg viewBox="0 0 144 144" aria-hidden="true">  <defs>    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">      <stop offset="0" stop-color="#0E8A7E"/>      <stop offset="1" stop-color="#1B3F8F"/>    </linearGradient>  </defs>  <rect width="144" height="144" rx="32" fill="url(#bg)"/>    <rect x="26" y="22" width="62" height="80" rx="9" fill="#FFFFFF"/>  <rect x="36" y="36" width="34" height="7" rx="3.5" fill="#1B3F8F" opacity="0.85"/>  <rect x="36" y="51" width="42" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>  <rect x="36" y="66" width="26" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>    <line x1="106" y1="106" x2="124" y2="124" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>  <circle cx="88" cy="88" r="30" fill="#0F2E6B" stroke="#FFFFFF" stroke-width="8"/>  <rect x="73" y="90" width="8" height="12" rx="2" fill="#FFC145"/>  <rect x="85" y="80" width="8" height="22" rx="2" fill="#FFC145"/>  <rect x="97" y="72" width="8" height="30" rx="2" fill="#FFC145" opacity="0.0"/></svg><span>FormScope</span></a><span class="by">Forms Reports &amp; Analytics for Jira, by LimeVibe Limited</span></div></header>
-<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html" aria-current=page>Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and coverage</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
+<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html" aria-current=page>Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and scale</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Tips and answers</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
 <main id="main">
 <h1>Install and set up</h1>
-<p class="lead">FormScope works with the native forms you already use in Jira Service Management Cloud. You don't need to change your forms.</p>
+<p class="lead">FormScope works with the native forms you already use in Jira Service Management Cloud. Keep your forms exactly as they are.</p>
 <h2>Install</h2>
-<ol><li>A Jira admin installs FormScope from the Atlassian Marketplace. A free evaluation starts automatically; the app is billed through Atlassian after it.</li>
+<ol><li>A Jira admin installs FormScope from the Atlassian Marketplace. Every installation starts with a free evaluation, then continues as a subscription billed by Atlassian.</li>
 <li>Open <strong>Jira settings &gt; Apps</strong> and select <strong>Configure</strong> for FormScope, or open <strong>Apps &gt; FormScope</strong> from the Jira sidebar.</li></ol>
 <h2>Choose forms and questions</h2>
-<p>Nothing is read until a Jira admin chooses what to include. On the <strong>Get started</strong> tab:</p>
+<p>You decide exactly what FormScope reports on. On the <strong>Get started</strong> tab:</p>
 <ol>
 <li><strong>Service project.</strong> Search for the service project that uses the form.</li>
 <li><strong>Form.</strong> Choose one of the project's forms. A data source covers one form, including every version of it over time.</li>
-<li><strong>Questions.</strong> Select only the questions you need for reporting. FormScope stores answers to the selected questions and nothing else from that form. For number questions, set a unit such as <code>USD</code> or <code>items</code>.</li>
+<li><strong>Questions.</strong> Pick the questions you want to report on. FormScope stores just these answers. For number questions, set a unit such as <code>USD</code> or <code>items</code>.</li>
 <li><strong>Which requests.</strong> Index requests created on or after a date (default: 12 months ago) or from any date.</li>
-<li><strong>Access checks.</strong> Leave <em>Check each viewer's access to every form</em> on (recommended). See <a href="permissions.html">Permissions</a>.</li>
-<li><strong>Review and start.</strong> FormScope shows a one-sentence summary of what it will read. Select <strong>Start indexing</strong>.</li>
+<li><strong>Access checks.</strong> Keep <em>Check each viewer's access to every form</em> on (recommended). See <a href="permissions.html">Permissions</a>.</li>
+<li><strong>Review and start.</strong> FormScope summarises what it will read in one sentence. Select <strong>Start indexing</strong>.</li>
 </ol>
-<p>Indexing runs in the background in small, resumable batches, and the <strong>Indexing</strong> tab shows progress. You can leave the page. Reports become available as soon as the first batch is ready; until indexing finishes, reports say their results may be incomplete.</p>
-<p>How long the first indexing takes depends on how many requests the project has and on Jira's rate limits. As a guide, the synthetic test dataset used during development (about 260 requests with forms) was indexed in under a minute.</p>
+<p>Indexing runs in the background while your team keeps working, and the <strong>Indexing</strong> tab shows live progress. Reports start working as soon as the first batch is ready and fill in automatically as indexing completes. In our testing, a few hundred requests indexed in under a minute.</p>
 <h2>Create your first report</h2>
-<p>Open <strong>Apps &gt; FormScope &gt; Create report</strong>, pick a template, confirm which of your questions to use, and save. See <a href="reports.html">Reports and mappings</a>.</p>
+<p>Open <strong>Apps &gt; FormScope &gt; Create report</strong>, pick a template, choose your questions and save. See <a href="reports.html">Reports and mappings</a>.</p>
 <h2>Who can use FormScope</h2>
-<p>By default everyone with Jira access can open FormScope reports. To limit this, go to <strong>Settings</strong> and choose groups. Jira admins always have access. Access to FormScope never widens access to data: see <a href="permissions.html">Permissions</a>.</p>
+<p>Everyone with Jira access can open FormScope reports by default. To choose specific groups, go to <strong>Settings</strong>. Jira admins always have access, and every report follows each person's Jira permissions: see <a href="permissions.html">Permissions</a>.</p>
 </main></div>
 <footer><div class="bar"><span>&copy; 2026 LimeVibe Limited. Registered in England and Wales, company number 06872411.</span>
 <span style="margin-left:auto"><a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span></div></footer>

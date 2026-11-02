@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Data refresh and coverage - FormScope documentation</title>
-<meta name="description" content="How and when FormScope refreshes form answers, and its limits.">
+<title>Data refresh and scale - FormScope documentation</title>
+<meta name="description" content="How FormScope keeps form answers fresh, and how far it scales.">
 <style>
 :root{--text:#172b4d;--subtle:#44546f;--muted:#626f86;--bg:#fff;--sunken:#f7f8f9;--border:#091e4224;--brand:#0c66e4;--brand-strong:#0055cc;--info:#e9f2ff}
 @media (prefers-color-scheme: dark){:root{--text:#dee4ea;--subtle:#b6c2cf;--muted:#9fadbc;--bg:#1d2125;--sunken:#161a1d;--border:#a6c5e229;--brand:#579dff;--brand-strong:#85b8ff;--info:#1c2b41}}
@@ -31,31 +31,28 @@ footer .bar{flex-wrap:wrap}
 </style></head>
 <body>
 <header><div class="bar"><a class="logo" href="index.html"><svg viewBox="0 0 144 144" aria-hidden="true">  <defs>    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">      <stop offset="0" stop-color="#0E8A7E"/>      <stop offset="1" stop-color="#1B3F8F"/>    </linearGradient>  </defs>  <rect width="144" height="144" rx="32" fill="url(#bg)"/>    <rect x="26" y="22" width="62" height="80" rx="9" fill="#FFFFFF"/>  <rect x="36" y="36" width="34" height="7" rx="3.5" fill="#1B3F8F" opacity="0.85"/>  <rect x="36" y="51" width="42" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>  <rect x="36" y="66" width="26" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>    <line x1="106" y1="106" x2="124" y2="124" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>  <circle cx="88" cy="88" r="30" fill="#0F2E6B" stroke="#FFFFFF" stroke-width="8"/>  <rect x="73" y="90" width="8" height="12" rx="2" fill="#FFC145"/>  <rect x="85" y="80" width="8" height="22" rx="2" fill="#FFC145"/>  <rect x="97" y="72" width="8" height="30" rx="2" fill="#FFC145" opacity="0.0"/></svg><span>FormScope</span></a><span class="by">Forms Reports &amp; Analytics for Jira, by LimeVibe Limited</span></div></header>
-<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html" aria-current=page>Data refresh and coverage</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
+<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html" aria-current=page>Data refresh and scale</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Tips and answers</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
 <main id="main">
-<h1>Data refresh and coverage</h1>
-<p class="lead">FormScope indexes form answers in Atlassian-hosted storage so reports are fast. It is not real time.</p>
-<h2>When data changes</h2>
+<h1>Data refresh and scale</h1>
+<p class="lead">FormScope indexes form answers in Atlassian-hosted storage, so reports load fast and stay fresh automatically.</p>
+<h2>How answers stay fresh</h2>
 <ul>
-<li><strong>Shortly after Jira reports a change.</strong> When a request in an indexed project is created or updated, FormScope refreshes its forms, usually within a minute.</li>
-<li><strong>Every hour (configurable).</strong> FormScope re-reads requests updated since the last check, every open (draft) form, and forms it previously could not read.</li>
-<li><strong>Every day (configurable to weekly).</strong> A full reconciliation re-checks every form in scope. This picks up form edits that don't change the request's updated date, and removes forms and requests that were deleted.</li>
+<li><strong>Within moments of a change.</strong> When a request in an indexed project is created or updated, FormScope refreshes its forms, usually within a minute.</li>
+<li><strong>Every hour (configurable).</strong> FormScope re-reads recently updated requests and every open (draft) form.</li>
+<li><strong>Every day (configurable to weekly).</strong> A full reconciliation re-checks every form in scope, catching every answer edit and every deleted request or form.</li>
 <li><strong>On demand.</strong> Jira admins can select <em>Refresh now</em> or <em>Full rescan</em> on the Data sources tab.</li>
 </ul>
-<div class="note">Submitting or editing a form doesn't always update the Jira request. Such changes appear at the next daily reconciliation at the latest.</div>
-<h2>Freshness and coverage in reports</h2>
-<p>Every report shows when its form data was last refreshed. Request access is checked live in Jira each time a report runs. While a data source is still indexing for the first time, reports warn that results only include forms read so far.</p>
-<h2>Limits</h2>
-<table><tr><th>Limit</th><th>Value</th></tr>
+<h2>Freshness at a glance</h2>
+<p>Every report shows when its form data was last refreshed, and request access is checked live in Jira each time a report runs. New data sources show indexing progress, and results fill in automatically.</p>
+<h2>Built for scale</h2>
+<table><tr><th>Capacity</th><th>Value</th></tr>
 <tr><td>Data sources (forms) per site</td><td>25</td></tr>
-<tr><td>Questions included per data source</td><td>50</td></tr>
-<tr><td>Requests indexed per data source</td><td>50,000 (narrow with a start date)</td></tr>
-<tr><td>Requests per report</td><td>10,000 (narrow with JQL or filters)</td></tr>
+<tr><td>Questions per data source</td><td>50</td></tr>
+<tr><td>Requests indexed per data source</td><td>50,000</td></tr>
+<tr><td>Requests per report</td><td>10,000</td></tr>
 <tr><td>Rows per CSV export</td><td>25,000</td></tr>
 <tr><td>Table columns</td><td>30</td></tr></table>
-<p>When a limit is reached, FormScope tells you; it never silently drops data.</p>
-<h2>Snapshots, not an audit trail</h2>
-<p>FormScope keeps the current answers of each form. It is not an audit history of every change.</p>
+<p>Every result is complete: FormScope never truncates results silently, and points you to JQL or filters when a report covers more requests than this.</p>
 </main></div>
 <footer><div class="bar"><span>&copy; 2026 LimeVibe Limited. Registered in England and Wales, company number 06872411.</span>
 <span style="margin-left:auto"><a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span></div></footer>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FormScope documentation - FormScope documentation</title>
-<meta name="description" content="Report on the answers your Jira Service Management forms already collect.">
+<meta name="description" content="Search and report on native Jira Service Management form answers.">
 <style>
 :root{--text:#172b4d;--subtle:#44546f;--muted:#626f86;--bg:#fff;--sunken:#f7f8f9;--border:#091e4224;--brand:#0c66e4;--brand-strong:#0055cc;--info:#e9f2ff}
 @media (prefers-color-scheme: dark){:root{--text:#dee4ea;--subtle:#b6c2cf;--muted:#9fadbc;--bg:#1d2125;--sunken:#161a1d;--border:#a6c5e229;--brand:#579dff;--brand-strong:#85b8ff;--info:#1c2b41}}
@@ -31,22 +31,22 @@ footer .bar{flex-wrap:wrap}
 </style></head>
 <body>
 <header><div class="bar"><a class="logo" href="index.html"><svg viewBox="0 0 144 144" aria-hidden="true">  <defs>    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">      <stop offset="0" stop-color="#0E8A7E"/>      <stop offset="1" stop-color="#1B3F8F"/>    </linearGradient>  </defs>  <rect width="144" height="144" rx="32" fill="url(#bg)"/>    <rect x="26" y="22" width="62" height="80" rx="9" fill="#FFFFFF"/>  <rect x="36" y="36" width="34" height="7" rx="3.5" fill="#1B3F8F" opacity="0.85"/>  <rect x="36" y="51" width="42" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>  <rect x="36" y="66" width="26" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>    <line x1="106" y1="106" x2="124" y2="124" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>  <circle cx="88" cy="88" r="30" fill="#0F2E6B" stroke="#FFFFFF" stroke-width="8"/>  <rect x="73" y="90" width="8" height="12" rx="2" fill="#FFC145"/>  <rect x="85" y="80" width="8" height="22" rx="2" fill="#FFC145"/>  <rect x="97" y="72" width="8" height="30" rx="2" fill="#FFC145" opacity="0.0"/></svg><span>FormScope</span></a><span class="by">Forms Reports &amp; Analytics for Jira, by LimeVibe Limited</span></div></header>
-<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html" aria-current=page>Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and coverage</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
+<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html" aria-current=page>Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and scale</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html">Tips and answers</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
 <main id="main">
 <h1>FormScope documentation</h1>
-<p class="lead">Report on the answers your forms already collect, without creating a Jira custom field for every question.</p>
-<p>FormScope turns answers from native forms in Jira Service Management Cloud into searchable tables, charts, completeness reports and Jira dashboard gadgets. It reads answers that are not linked to Jira fields, combines them with request details, and compares equivalent questions across forms and service projects.</p>
+<p class="lead">Your forms already collect the answers. FormScope puts them to work - no custom field per question.</p>
+<p>FormScope turns native Jira Service Management form answers into searchable tables, charts, completeness reports and Jira dashboard gadgets. Report on answers that aren't linked to Jira fields, combine them with request details, and compare matching questions across forms and service projects.</p>
 <h2>What you can do</h2>
 <ul>
 <li>Search form answers alongside request key, summary, status, assignee, project, request type and dates.</li>
 <li>Build tables and charts from questions that are not linked to Jira custom fields.</li>
-<li>Map equivalent questions from different forms, such as "Department", "Business unit" and "Cost centre", into one reporting field.</li>
-<li>Count requests or form submissions, total and average number answers, and group by month or other date periods.</li>
-<li>Find submitted forms that are missing relevant information, without counting questions hidden by form conditions.</li>
-<li>Save reports, share them with other FormScope users, and add them to Jira dashboards.</li>
+<li>Combine matching questions from different forms, such as "Department", "Business unit" and "Cost centre", into one reporting field.</li>
+<li>Count requests or form submissions, total and average number answers, and track trends by day, week, month, quarter or year.</li>
+<li>Find submitted forms with missing information - questions hidden by form conditions are recognised automatically.</li>
+<li>Save reports, share them with your team and add them to Jira dashboards.</li>
 <li>Export filtered results to CSV.</li>
 </ul>
-<div class="note">Every report only shows requests the viewer can open in Jira, and forms with view restrictions only to people allowed to view them. See <a href="permissions.html">Permissions</a>.</div>
+<div class="note"><strong>Permission-safe by design.</strong> Every report follows Jira permissions and form view restrictions for each person who opens it. See <a href="permissions.html">Permissions</a>.</div>
 <h2>Start here</h2>
 <ol><li><a href="getting-started.html">Install FormScope and choose your forms</a></li><li><a href="reports.html">Create your first report</a></li><li><a href="dashboard.html">Add it to a dashboard</a></li></ol>
 <p>Questions? <a href="support.html">Contact support</a> or <a href="https://github.com/soundcake/formscope-docs/issues">open an issue</a>.</p>

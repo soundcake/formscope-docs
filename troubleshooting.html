@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Troubleshooting - FormScope documentation</title>
-<meta name="description" content="Fixes for common FormScope questions.">
+<title>Tips and answers - FormScope documentation</title>
+<meta name="description" content="Quick answers to common FormScope questions.">
 <style>
 :root{--text:#172b4d;--subtle:#44546f;--muted:#626f86;--bg:#fff;--sunken:#f7f8f9;--border:#091e4224;--brand:#0c66e4;--brand-strong:#0055cc;--info:#e9f2ff}
 @media (prefers-color-scheme: dark){:root{--text:#dee4ea;--subtle:#b6c2cf;--muted:#9fadbc;--bg:#1d2125;--sunken:#161a1d;--border:#a6c5e229;--brand:#579dff;--brand-strong:#85b8ff;--info:#1c2b41}}
@@ -31,20 +31,20 @@ footer .bar{flex-wrap:wrap}
 </style></head>
 <body>
 <header><div class="bar"><a class="logo" href="index.html"><svg viewBox="0 0 144 144" aria-hidden="true">  <defs>    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">      <stop offset="0" stop-color="#0E8A7E"/>      <stop offset="1" stop-color="#1B3F8F"/>    </linearGradient>  </defs>  <rect width="144" height="144" rx="32" fill="url(#bg)"/>    <rect x="26" y="22" width="62" height="80" rx="9" fill="#FFFFFF"/>  <rect x="36" y="36" width="34" height="7" rx="3.5" fill="#1B3F8F" opacity="0.85"/>  <rect x="36" y="51" width="42" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>  <rect x="36" y="66" width="26" height="7" rx="3.5" fill="#1B3F8F" opacity="0.35"/>    <line x1="106" y1="106" x2="124" y2="124" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>  <circle cx="88" cy="88" r="30" fill="#0F2E6B" stroke="#FFFFFF" stroke-width="8"/>  <rect x="73" y="90" width="8" height="12" rx="2" fill="#FFC145"/>  <rect x="85" y="80" width="8" height="22" rx="2" fill="#FFC145"/>  <rect x="97" y="72" width="8" height="30" rx="2" fill="#FFC145" opacity="0.0"/></svg><span>FormScope</span></a><span class="by">Forms Reports &amp; Analytics for Jira, by LimeVibe Limited</span></div></header>
-<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and coverage</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html" aria-current=page>Troubleshooting</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
+<div class="wrap"><nav aria-label="Documentation"><ul><li><a href="index.html">Overview</a></li><li><a href="getting-started.html">Install and set up</a></li><li><a href="reports.html">Reports and mappings</a></li><li><a href="dashboard.html">Dashboard gadget</a></li><li><a href="data-refresh.html">Data refresh and scale</a></li><li><a href="permissions.html">Permissions</a></li><li><a href="scope.html">Supported forms</a></li><li><a href="licensing.html">Subscription and licensing</a></li><li><a href="troubleshooting.html" aria-current=page>Tips and answers</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="data-retention.html">Data retention and deletion</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">End user terms</a></li></ul></nav>
 <main id="main">
-<h1>Troubleshooting</h1>
-<h3>A report says results may be incomplete</h3><p>A data source is still indexing for the first time. Check progress on the Indexing tab.</p>
-<h3>A recent form edit is missing</h3><p>Form edits don't always update the request. They appear at the next daily reconciliation, or a Jira admin can select <em>Refresh now</em> or <em>Full rescan</em>.</p>
-<h3>"Checking your access to forms"</h3><p>FormScope confirms your access to each form with Jira the first time you view a report. Later views reuse the result for up to two hours.</p>
-<h3>Some forms are never indexed</h3><p>They use view restrictions and Jira refused FormScope access. This is expected; see <a href="permissions.html">Permissions</a>.</p>
-<h3>Someone sees fewer results than I do</h3><p>Reports apply each viewer's own Jira permissions. Sharing a report doesn't share data.</p>
-<h3>Jira rejected the JQL</h3><p>Fix the JQL shown in the message. Remove ORDER BY, and make sure brackets and quotes are balanced.</p>
-<h3>This report covers too many requests</h3><p>Add JQL (for example by created date) or filters, or choose fewer forms.</p>
-<h3>A number total looks wrong</h3><p>Answers that aren't valid numbers are excluded and counted in the report's notes. Check the unit of each question in the data source.</p>
-<h3>The CSV download didn't start</h3><p>Some browsers block downloads from embedded pages. FormScope then offers to copy the CSV instead.</p>
-<h3>FormScope says the subscription isn't active</h3><p>Ask a Jira admin to start an evaluation or subscribe in Manage apps.</p>
-<p>Still stuck? <a href="support.html">Contact support</a>.</p>
+<h1>Tips and answers</h1>
+<h3>A new data source is indexing</h3><p>Reports fill in automatically while it indexes. Track progress on the Indexing tab.</p>
+<h3>See a form edit straight away</h3><p>FormScope picks up edits automatically. To see one immediately, a Jira admin can select <em>Refresh now</em> on the Data sources tab.</p>
+<h3>"Confirming your form access with Jira"</h3><p>FormScope confirms your access to each form the first time you view a report, then reuses the result for up to two hours so repeat views are fast.</p>
+<h3>Report on forms with view restrictions</h3><p>Add FormScope to the form's restriction list, then refresh the data source. See <a href="permissions.html">Permissions</a>.</p>
+<h3>Teammates see different totals</h3><p>That's permission safety at work: each person's results are built from the requests they can open in Jira.</p>
+<h3>JQL tips</h3><p>Leave out ORDER BY, because FormScope sorts for you, and keep brackets and quotes balanced.</p>
+<h3>Focus a big report</h3><p>Add JQL (for example by created date) or filters, or choose fewer forms.</p>
+<h3>Check a number total</h3><p>Totals use exact decimal arithmetic, and the report notes how many entries weren't valid numbers. Each question's unit is set on its data source.</p>
+<h3>Download a CSV</h3><p>If your browser holds back downloads from embedded pages, FormScope offers to copy the CSV instead.</p>
+<h3>Start a subscription</h3><p>A Jira admin can start a free evaluation or subscribe from Manage apps.</p>
+<p>Need a hand? <a href="support.html">Contact support</a>.</p>
 </main></div>
 <footer><div class="bar"><span>&copy; 2026 LimeVibe Limited. Registered in England and Wales, company number 06872411.</span>
 <span style="margin-left:auto"><a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></span></div></footer>
