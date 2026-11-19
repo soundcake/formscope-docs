@@ -1,0 +1,15 @@
+name: Suggest a feature
+description: Share an idea that would make FormScope better for your team.
+title: "Idea: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like FormScope to do?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: How would it help your team?

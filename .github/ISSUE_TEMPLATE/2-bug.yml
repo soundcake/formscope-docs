@@ -1,0 +1,23 @@
+name: Report a problem
+description: Something in FormScope didn't work as expected.
+title: "Problem: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include the page, the report or data source involved, and any message shown.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: site
+    attributes:
+      label: Jira site (optional)
+      placeholder: your-site.atlassian.net

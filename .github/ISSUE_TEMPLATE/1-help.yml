@@ -1,0 +1,19 @@
+name: Get help
+description: Ask a question or get help setting up FormScope.
+title: "Help: "
+labels: ["support"]
+body:
+  - type: markdown
+    attributes:
+      value: Tell us what you're trying to do and we'll help you get there. Please don't include passwords, tokens or personal data from your forms.
+  - type: textarea
+    id: question
+    attributes:
+      label: What do you need help with?
+    validations:
+      required: true
+  - type: input
+    id: site
+    attributes:
+      label: Jira site (optional)
+      placeholder: your-site.atlassian.net

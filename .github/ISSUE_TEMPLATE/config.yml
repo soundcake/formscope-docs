@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private or security request
+    url: mailto:contact@limevibelimited.com
+    about: Email the FormScope team for anything private to your organization, or to report a security concern.
+  - name: FormScope documentation
+    url: https://soundcake.github.io/formscope-docs/
+    about: Setup guides, reports, dashboards, permissions and tips.
